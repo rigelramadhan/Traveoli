@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Traveoli"
 include(":app")
- 
+include(":core")
