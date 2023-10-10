@@ -18,7 +18,7 @@ data class TripEntity(
     val notes: String? = null,
 )
 
-data class UserAndTips(
+data class UserAndTrips(
     @Embedded
     val user: ProfileEntity,
 
