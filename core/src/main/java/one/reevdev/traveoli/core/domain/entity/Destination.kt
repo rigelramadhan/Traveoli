@@ -3,7 +3,7 @@ package one.reevdev.traveoli.core.domain.entity
 import one.reevdev.traveoli.core.data.datasource.local.entity.DestinationEntity
 
 data class Destination(
-    val destinationId: String,
+    val destinationId: Int,
     val name: String,
     val description: String? = null,
     val imageUrl: String? = null,

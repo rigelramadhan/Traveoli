@@ -5,7 +5,7 @@ import java.time.LocalDate
 import java.time.LocalTime
 
 data class Activity(
-    val activityId: String,
+    val activityId: Int,
     val tripId: String,
     val name: String,
     val date: LocalDate? = null,
@@ -19,8 +19,8 @@ fun Activity.toEntity(): ActivityEntity {
         activityId = activityId,
         tripId = tripId,
         name = name,
-        date = date,
-        time = time,
+//        date = date,
+//        time = time,
         duration = duration,
         notes = notes
     )

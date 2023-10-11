@@ -33,7 +33,7 @@ class TravelRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getActivities(tripId: String): Flow<List<Activity>> {
+    override fun getActivities(tripId: Int): Flow<List<Activity>> {
         return localDataSource.getActivities(tripId).map {
             it.map { activity ->
                 activity.toDomain()
@@ -57,15 +57,15 @@ class TravelRepositoryImpl @Inject constructor(
         localDataSource.insertActivity(activities.map { it.toEntity() })
     }
 
-    override fun deleteDestination(destinationId: String) {
+    override fun deleteDestination(destinationId: Int) {
         localDataSource.deleteDestination(destinationId)
     }
 
-    override fun deleteTrip(tripId: String) {
+    override fun deleteTrip(tripId: Int) {
         localDataSource.deleteTrip(tripId)
     }
 
-    override fun deleteActivity(activityId: String) {
+    override fun deleteActivity(activityId: Int) {
         deleteActivity(activityId)
     }
 }

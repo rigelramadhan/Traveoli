@@ -4,8 +4,9 @@ import one.reevdev.traveoli.core.data.datasource.local.entity.TripEntity
 import java.time.LocalDate
 
 data class Trip(
-    val tripId: String,
+    val tripId: Int,
     val userId: String,
+    val tripName: String,
     val destination: Destination? = null,
     val startDate: LocalDate? = null,
     val endDate: LocalDate? = null,
@@ -18,9 +19,10 @@ fun Trip.toEntity(): TripEntity {
     return TripEntity(
         tripId = tripId,
         userId = userId,
-        destinationId = destination?.destinationId.orEmpty(),
-        startDate = startDate,
-        endDate = endDate,
+        tripName = tripName,
+        destinationId = destination?.destinationId ?: -1,
+//        startDate = startDate,
+//        endDate = endDate,
         budget = budget,
         notes = notes,
     )

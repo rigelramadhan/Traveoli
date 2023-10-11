@@ -21,7 +21,7 @@ class LocalDataSource @Inject constructor(
         return travelDao.getTrips(username)
     }
 
-    override fun getActivities(tripId: String): Flow<List<ActivityEntity>> {
+    override fun getActivities(tripId: Int): Flow<List<ActivityEntity>> {
         return travelDao.getActivities(tripId)
     }
 
@@ -61,7 +61,7 @@ class LocalDataSource @Inject constructor(
         travelDao.deleteDestination(destination)
     }
 
-    override fun deleteDestination(destinationId: String) {
+    override fun deleteDestination(destinationId: Int) {
         travelDao.deleteDestination(destinationId)
     }
 
@@ -77,7 +77,7 @@ class LocalDataSource @Inject constructor(
         travelDao.deleteTrip(trip)
     }
 
-    override fun deleteTrip(tripId: String) {
+    override fun deleteTrip(tripId: Int) {
         travelDao.deleteTrip(tripId)
     }
 

@@ -11,11 +11,11 @@ import java.time.LocalTime
 @Entity(tableName = "Activity")
 data class ActivityEntity(
     @PrimaryKey(autoGenerate = true)
-    val activityId: String,
+    val activityId: Int,
     val tripId: String,
     val name: String,
-    val date: LocalDate? = null,
-    val time: LocalTime? = null,
+//    val date: LocalDate? = null,
+//    val time: LocalTime? = null,
     val duration: Int? = null,
     val notes: String? = null,
 )
@@ -36,8 +36,8 @@ fun ActivityEntity.toDomain(): Activity {
         activityId = activityId,
         tripId = tripId,
         name = name,
-        date = date,
-        time = time,
+//        date = date,
+//        time = time,
         duration = duration,
         notes = notes,
     )

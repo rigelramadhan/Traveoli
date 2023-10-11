@@ -18,7 +18,7 @@ class TravelInteractor @Inject constructor(
         return travelRepository.getTrips(username)
     }
 
-    override fun getActivities(tripId: String): Flow<List<Activity>> {
+    override fun getActivities(tripId: Int): Flow<List<Activity>> {
         return travelRepository.getActivities(tripId)
     }
 
@@ -38,15 +38,15 @@ class TravelInteractor @Inject constructor(
         travelRepository.insertActivities(activities)
     }
 
-    override fun deleteDestination(destinationId: String) {
+    override fun deleteDestination(destinationId: Int) {
         travelRepository.deleteDestination(destinationId)
     }
 
-    override fun deleteTrip(tripId: String) {
+    override fun deleteTrip(tripId: Int) {
         travelRepository.deleteTrip(tripId)
     }
 
-    override fun deleteActivity(activityId: String) {
+    override fun deleteActivity(activityId: Int) {
         travelRepository.deleteActivity(activityId)
     }
 

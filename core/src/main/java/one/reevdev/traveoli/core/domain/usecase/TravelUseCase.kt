@@ -9,12 +9,12 @@ import one.reevdev.traveoli.core.domain.entity.Trip
 interface TravelUseCase {
     fun getDestinations(): Flow<List<Destination>>
     fun getTrips(username: String): Flow<List<Trip>>
-    fun getActivities(tripId: String): Flow<List<Activity>>
+    fun getActivities(tripId: Int): Flow<List<Activity>>
     suspend fun insertDestination(destination: Destination)
     suspend fun insertTrip(trip: Trip)
     suspend fun insertActivity(activity: Activity)
     suspend fun insertActivities(activities: List<Activity>)
-    fun deleteDestination(destinationId: String)
-    fun deleteTrip(tripId: String)
-    fun deleteActivity(activityId: String)
+    fun deleteDestination(destinationId: Int)
+    fun deleteTrip(tripId: Int)
+    fun deleteActivity(activityId: Int)
 }

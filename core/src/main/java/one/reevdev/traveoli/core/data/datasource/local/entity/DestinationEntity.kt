@@ -7,7 +7,7 @@ import one.reevdev.traveoli.core.domain.entity.Destination
 @Entity(tableName = "Destination")
 data class DestinationEntity(
     @PrimaryKey(autoGenerate = true)
-    val destinationId: String,
+    val destinationId: Int,
     val name: String,
     val description: String? = null,
     val imageUrl: String? = null,
