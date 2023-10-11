@@ -7,7 +7,8 @@ import one.reevdev.traveoli.core.domain.entity.Trip
 
 interface TravelRepository {
     fun getDestinations(): Flow<List<Destination>>
-    fun getTrips(): Flow<List<Trip>>
+    fun getTrips(username: String): Flow<List<Trip>>
+    fun getActivities(tripId: String): Flow<List<Activity>>
     suspend fun insertDestination(destination: Destination)
     suspend fun insertTrip(trip: Trip)
     suspend fun insertActivity(activity: Activity)

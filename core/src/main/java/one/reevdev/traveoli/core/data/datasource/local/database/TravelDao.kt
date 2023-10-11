@@ -22,6 +22,9 @@ interface TravelDao {
     @Query("SELECT * FROM trip WHERE userId = :username")
     fun getTrips(username: String): Flow<List<TripEntity>>
 
+    @Query("SELECT * FROM activity WHERE tripId = :tripId")
+    fun getActivities(tripId: String): Flow<List<ActivityEntity>>
+
     @Transaction
     @Query("SELECT * FROM trip WHERE userId = :username")
     fun getTripAndActivities(username: String): Flow<List<TripAndActivity>>
@@ -51,12 +54,24 @@ interface TravelDao {
     @Delete(entity = DestinationEntity::class)
     fun deleteDestination(destination: DestinationEntity)
 
+    @Query("DELETE FROM destination WHERE destinationId = :destinationId")
+    fun deleteDestination(destinationId: String)
+
     @Delete(entity = ActivityEntity::class)
     fun deleteActivity(activity: ActivityEntity)
+
+    @Query("DELETE FROM activity WHERE activityId = :activityId")
+    fun deleteActivity(activityId: String)
 
     @Delete(entity = TripEntity::class)
     fun deleteTrip(trip: TripEntity)
 
+    @Query("DELETE FROM trip WHERE tripId = :tripId")
+    fun deleteTrip(tripId: String)
+
     @Delete(entity = ProfileEntity::class)
     fun deleteProfile(profile: ProfileEntity)
+
+    @Query("DELETE FROM profile WHERE username = :username")
+    fun deleteProfile(username: String)
 }

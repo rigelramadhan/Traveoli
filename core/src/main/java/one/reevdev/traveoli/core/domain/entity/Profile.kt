@@ -1,5 +1,7 @@
 package one.reevdev.traveoli.core.domain.entity
 
+import one.reevdev.traveoli.core.data.datasource.local.entity.ProfileEntity
+
 data class Profile(
     val firstName: String,
     val lastName: String? = null,
@@ -7,5 +9,16 @@ data class Profile(
     val email: String,
     val profilePicture: String? = null,
     val profilePictureLocal: Int? = null,
-    val trips: List<Trip>? = null
+    var trips: List<Trip>? = null
 )
+
+fun Profile.toEntity(): ProfileEntity {
+    return ProfileEntity(
+        firstName = firstName,
+        lastName = lastName,
+        username = username,
+        email = email,
+        profilePicture = profilePicture,
+        profilePictureLocal = profilePictureLocal,
+    )
+}

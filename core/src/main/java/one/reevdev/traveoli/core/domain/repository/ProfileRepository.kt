@@ -4,7 +4,7 @@ import kotlinx.coroutines.flow.Flow
 import one.reevdev.traveoli.core.domain.entity.Profile
 
 interface ProfileRepository {
-    fun getUserProfile(): Flow<Profile>
+    fun getUserProfile(username: String): Flow<Profile>
     suspend fun insertProfile(profile: Profile)
     fun deleteProfile(username: String)
 }

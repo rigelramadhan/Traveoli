@@ -4,6 +4,7 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.Relation
+import one.reevdev.traveoli.core.domain.entity.Activity
 import java.time.LocalDate
 import java.time.LocalTime
 
@@ -13,9 +14,9 @@ data class ActivityEntity(
     val activityId: String,
     val tripId: String,
     val name: String,
-    val date: LocalDate,
-    val time: LocalTime,
-    val duration: Int,
+    val date: LocalDate? = null,
+    val time: LocalTime? = null,
+    val duration: Int? = null,
     val notes: String? = null,
 )
 
@@ -29,3 +30,15 @@ data class TripAndActivity(
     )
     val activities: List<ActivityEntity>
 )
+
+fun ActivityEntity.toDomain(): Activity {
+    return Activity(
+        activityId = activityId,
+        tripId = tripId,
+        name = name,
+        date = date,
+        time = time,
+        duration = duration,
+        notes = notes,
+    )
+}
