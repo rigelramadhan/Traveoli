@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Traveoli</string>
+    <string name="content_description_destination_image">Destination image</string>
 </resources>
