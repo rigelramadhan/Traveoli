@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "one.reevdev.traveoli"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "one.reevdev.traveoli"
         minSdk = 23
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -53,6 +53,8 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":core")))
+
     // # Shared
     implementation("androidx.core:core-ktx:1.12.0")
 

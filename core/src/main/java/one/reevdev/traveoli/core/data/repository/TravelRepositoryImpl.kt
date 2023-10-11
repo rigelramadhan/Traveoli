@@ -12,6 +12,7 @@ import one.reevdev.traveoli.core.domain.entity.Trip
 import one.reevdev.traveoli.core.domain.entity.toEntity
 import one.reevdev.traveoli.core.domain.repository.TravelRepository
 import javax.inject.Inject
+import javax.inject.Singleton
 
 class TravelRepositoryImpl @Inject constructor(
     private val localDataSource: LocalDataSource

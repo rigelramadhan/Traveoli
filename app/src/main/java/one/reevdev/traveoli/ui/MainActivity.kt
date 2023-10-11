@@ -1,4 +1,4 @@
-package one.reevdev.traveoli
+package one.reevdev.traveoli.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
