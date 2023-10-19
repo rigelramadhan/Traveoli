@@ -11,23 +11,24 @@ import one.reevdev.traveoli.core.domain.entity.Trip
 import one.reevdev.traveoli.ui.component.TraveoliError
 import one.reevdev.traveoli.ui.component.TraveoliLoading
 import one.reevdev.traveoli.ui.component.TripItem
+import one.reevdev.traveoli.utils.Resource
 
 @Composable
 fun TripScreen(
     modifier: Modifier = Modifier,
     viewModel: TripViewModel = hiltViewModel()
 ) {
-    val uiState: TripUiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val uiState: Resource<TripUiState> by viewModel.uiState.collectAsStateWithLifecycle()
 
-    uiState.trips.handle(
+    uiState.handle(
         onLoading = {
             TraveoliLoading()
         },
-        onSuccess = { trips ->
-            TripContent(trips = trips)
+        onSuccess = {
+            TripContent(trips = it.trips)
         },
-        onFailure = { message ->
-            TraveoliError(message = message)
+        onFailure = {
+            TraveoliError(message = it)
         }
     )
 }
